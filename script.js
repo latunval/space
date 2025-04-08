@@ -1,5 +1,5 @@
 // step1
-
+// creating an array variable
 const planetLog = [
     {name: "Mars", distance: 78, explored: false, type : "gas"},
     {name: "Jupiter", distance: 200, explored: true, type : "Rocky"},
@@ -12,7 +12,7 @@ const planetLog = [
 console.table(planetLog);
 
 // step 2
-
+// looping through the array using for loop
 for (let i = 0; i < planetLog.length; i++) {
     // const element = array[i];
     if (planetLog[i].explored === true) {
@@ -21,7 +21,7 @@ for (let i = 0; i < planetLog.length; i++) {
     }
     else { if (planetLog[i].explored === false && planetLog[i].distance < 100){
         console.log(`Nearby : ${planetLog[i].name} ${planetLog[i].distance}`);
-        // return
+        
     }
     else  {
         console.log(`Uncharted : ${planetLog[i].name} ${planetLog[i].distance}`);
@@ -30,7 +30,7 @@ for (let i = 0; i < planetLog.length; i++) {
 }
 
 // step 3
-
+// validating the array if its in complete forms
 const validate = function (planet) {
 if (!planet.name || planet.name === null || !planet.explored ) {
     return `Error: ${planet.name} has incomplete data!`;
@@ -44,6 +44,7 @@ return `${planet.name}`
  }
 
 //  step 4
+// checking the planets that are very close to each other
  const getClose =function() {
     const closePlanet = planetLog.filter(planet => planet.distance < 200 && planet.explored === false);
     if (closePlanet.length > 0) {
@@ -57,7 +58,7 @@ console.log("No close unexplored planets!" );
 //  console.table(getClose)
 
 // step 5
-
+// checking the array lists if its contains name properties
 const markExplored = function(name) {
     if (!name) {
         console.log("Please provide a valid planet name!");
